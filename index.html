@@ -40,7 +40,7 @@
                      onerror="this.src=''; this.alt='โลโก้ไม่สามารถโหลดได้'; this.style.display='none';">
                 <div>
                     <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">ยินดีต้อนรับฝ่ายขายทุกท่าน</h1>
-                    <h2 class="text-xl md:text-2xl font-medium text-white opacity-90">กรุณากรอกข้อมูลของท่าน</h2>
+                    <h2 class="text-xl md:text-2xl font-medium text-white opacity-90">เข้าสู่ระบบ ก่อนเข้าใช้งาน</h2>
                 </div>
             </div>
         </div>
@@ -48,7 +48,9 @@
         <!-- Registration Form -->
         <div class="max-w-md mx-auto glass-effect rounded-2xl shadow-2xl p-8">
             <form id="registrationForm" class="space-y-6">
-                <!-- ชื่อ -->
+
+
+                <!-- ชื่อ - นามสกุล -->
                 <div>
                     <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
                         ชื่อ - นามสกุล <span class="text-red-500">*</span>
@@ -104,13 +106,15 @@
                 <!-- Submit Button -->
                 <button type="submit" 
                         class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 btn-hover transform">
-                    ลงชื่อเข้าใช้
+                    เข้าสู่ระบบ
                 </button>
             </form>
         </div>
     </div>
 
     <script>
+
+
         // จัดการการส่งฟอร์ม
         document.getElementById('registrationForm').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -120,7 +124,7 @@
             const data = Object.fromEntries(formData);
             
             // ตรวจสอบว่ากรอกข้อมูลครบหรือไม่
-            if (!data.employeeId || !data.name || !data.department || !data.branch) {
+            if (!data.name || !data.department || !data.branch) {
                 Swal.fire({
                     icon: 'warning',
                     title: 'กรุณากรอกข้อมูลให้ครบถ้วน',
@@ -143,7 +147,6 @@
             try {
                 // เตรียมข้อมูลสำหรับส่ง
                 const submitData = {
-                    employeeId: data.employeeId,
                     name: data.name,
                     department: data.department,
                     branch: data.branch,
@@ -183,6 +186,7 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97cd826683638955',t:'MTc1NzQ5MjQ2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97cd9f9085a698e2',t:'MTc1NzQ5MzY1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
